@@ -1,7 +1,6 @@
 <!DOCTYPE html
 <html lang="en">
 <head>
- <iframe src="https://tearpc.github.io/assets/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="https://ichikaa.xyz/file/zH3d2nD32Py9Nf67SA8r.jpg">
@@ -15,9 +14,17 @@
 <title>Tear PC</title>
 </head>
 <body>
- <audio id="player" autoplay loop>
-    <source src="https://tearpc.github.io/assets/bg.mp3" type="audio/mp3">
-</audio>
+ 
+    <iframe src="assets/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <audio id="player" preload="auto" autoplay loop>
+        <source src="assets/bg.mp3" type="audio/mp3">
+    </audio>
+    <div class="fullscreen-bg-video d-none d-sm-block">
+        <video loop autoplay muted>
+            <source type="video/mp4" src="assets/anime.mp4">
+        </video>
+    </div>
+
 <header class="profile container">
 <i class="ri-moon-line change-theme" id="theme-button"></i>
 <div class="profile__container grid">
