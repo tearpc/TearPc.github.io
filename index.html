@@ -199,5 +199,6 @@ var loopCounter = 0;
 document.getElementById('loop-limited').addEventListener('ended', function(){if (loopCounter < loopLimit){this.currentTime = 0;this.play();loopCounter++;}
 }, false);</script></p>
  <audio id="song" loop="" src="./bg.mp3"></audio>
+ <div id="music"><embed src="./bg.mp3" autostart=true loop=true></div>
 </body>
 </html>
