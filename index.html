@@ -14,7 +14,12 @@
 <title>Tear PC</title>
 </head>
 <body>
-     <audio id="song" loop="" src="https://tearpc.github.io/assets/bg.mp3"></audio>
+<p><audio id="loop-limited" controls="controls" autoplay style="width: 6em;height:20px;"><source src="http://www.chakdhoom.com/wp-content/uploads/2017/01/chak-1-AudioTrimmer.com_.mp3" type="audio/ogg" /><source src="http://www.chakdhoom.com/wp-content/uploads/2017/01/chak-1-AudioTrimmer.com_.mp3" type="audio/mpeg" /></audio><br />
+<script>
+var loopLimit = 5;
+var loopCounter = 0;
+document.getElementById('loop-limited').addEventListener('ended', function(){if (loopCounter < loopLimit){this.currentTime = 0;this.play();loopCounter++;}
+}, false);</script></p>
 <header class="profile container">
 <i class="ri-moon-line change-theme" id="theme-button"></i>
 <div class="profile__container grid">
@@ -193,13 +198,5 @@ Contact
       }
       </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- <p><audio id="loop-limited" controls="controls" autoplay style="width: 6em;height:20px;"><source src="./bg.mp3" type="audio/ogg" /><source src="./bg.mp3" type="audio/mpeg" /></audio><br />
-<script>
-var loopLimit = 5;
-var loopCounter = 0;
-document.getElementById('loop-limited').addEventListener('ended', function(){if (loopCounter < loopLimit){this.currentTime = 0;this.play();loopCounter++;}
-}, false);</script></p>
- <audio id="song" loop="" src="./bg.mp3"></audio>
- <div id="music"><embed src="./bg.mp3" autostart=true loop=true></div>
 </body>
 </html>
