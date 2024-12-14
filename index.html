@@ -20,7 +20,7 @@
     display: none;
   }
 
-     /* Define the RGB shifting animation */
+   /* Define the smooth RGB gradient shifting animation */
     @keyframes gradientShift {
       0% {
         background: linear-gradient(90deg, red, violet, blue); /* Start with red to violet to blue */
@@ -28,12 +28,12 @@
         color: transparent; /* Make the text transparent to show gradient */
       }
       50% {
-        background: linear-gradient(90deg, violet, blue, red); /* Shift the gradient */
+        background: linear-gradient(90deg, violet, blue, red); /* Transition smoothly */
         -webkit-background-clip: text;
         color: transparent;
       }
       100% {
-        background: linear-gradient(90deg, blue, red, violet); /* Final gradient shift */
+        background: linear-gradient(90deg, blue, red, violet); /* Complete the cycle smoothly */
         -webkit-background-clip: text;
         color: transparent;
       }
@@ -43,7 +43,7 @@
     .profile__name {
       font-size: 3rem; /* Larger text size */
       font-weight: bold; /* Make it bold */
-      animation: gradientShift 3s infinite; /* 3s duration, infinite loop */
+      animation: gradientShift 6s ease infinite; /* 6s duration, smooth easing, infinite loop */
     }
 </style>
 </head>
@@ -81,7 +81,7 @@
 <img src="https://i.imgur.com/rQ6r10R.jpeg" alt="Tear PC ">
 </div>
 </div>
-<h2 class="profile__name">🥀 Tear PC HEREX <3</h2>
+<h2 class="profile__name">🥀 Tear PC <3</h2>
 <h3 class="profile__profession">🥀 Tears will Always Be The Last Gift Of Your Loyalty🍁</h3>
 <ul class="profile__social">
 <a href="https://www.snapchat.com/add/tearpc?share_id=udnESvOCGkQ&locale=en-IN" target="_blank" class="profile__social-link">
