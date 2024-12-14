@@ -19,6 +19,24 @@
   audio {
     display: none;
   }
+
+    /* Define the fade animation */
+    @keyframes fadeRedBlue {
+      0% {
+        color: red; /* Start with red */
+      }
+      50% {
+        color: blue; /* Midpoint: fade to blue */
+      }
+      100% {
+        color: red; /* End with red */
+      }
+    }
+
+    /* Apply the animation to the .profile__name class */
+    .profile__name {
+      animation: fadeRedBlue 1.5s infinite; /* 1.5s duration, infinite loop */
+    }
 </style>
 </head>
 
