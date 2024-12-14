@@ -1,4 +1,4 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,15 +13,32 @@
 <link rel="icon" href="assets/img/favicon.jpeg" type="image/jpeg">
 <title>Tear PC</title>
 
-!-- Background Music -->
-<audio autoplay="autoplay" loop="loop" hidden="hidden">
-    <source src="https://d.top4top.io/m_32690l2rs1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<!-- Background Music -->
+<style>
+  /* Hide the audio player completely */
+  audio {
+    display: none;
+  }
+</style>
 </head>
 
 <body>
- <header class="profile container">
+<audio id="background-music" loop>
+    <source src="https://d.top4top.io/m_32690l2rs1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+  // Attempt to play background music once the page loads
+  window.addEventListener('load', () => {
+      const audio = document.getElementById('background-music');
+      audio.play().catch(error => {
+          console.log('Autoplay blocked: User interaction required.');
+      });
+  });
+</script>
+
+<header class="profile container">
 <i class="ri-moon-line change-theme" id="theme-button"></i>
 <div class="profile__container grid">
 <div class="profile__data">
@@ -186,7 +203,7 @@ Contact
 </main>
 <footer class="footer container">
 <span class="footer__copy">
-&#169; Tear PC All rigths reserved
+&#169; Tear PC All rights reserved
 </span>
 </footer>
 <script src="assets/js/scrollreveal.min.js"></script>
