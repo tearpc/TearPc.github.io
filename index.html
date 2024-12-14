@@ -12,15 +12,10 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="icon" href="assets/img/favicon.jpeg" type="image/jpeg">
 <title>Tear PC</title>
-
-<!-- Background Music -->
-<style>
-  /* Hide the audio player completely */
-  audio {
-    display: none;
-  }
-
-   /* Define the smooth RGB color shifting animation */
+<!-- Link to Google Fonts for Atomic Age -->
+  <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
+  <style>
+    /* Define the smooth RGB color shifting animation */
     @keyframes rgbShift {
       0% {
         color: rgb(255, 0, 0); /* Start with red (RGB) */
@@ -36,8 +31,9 @@
       }
     }
 
-    /* Apply the animation to the .profile__name class */
+    /* Apply the animation and custom font (Atomic Age) to the .profile__name class */
     .profile__name {
+      font-family: 'Atomic Age', sans-serif; /* Using Atomic Age font */
       font-size: 3rem; /* Larger text size */
       font-weight: bold; /* Bold text */
       animation: rgbShift 4s ease infinite; /* 4s duration, smooth easing, infinite loop */
