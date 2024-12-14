@@ -20,30 +20,27 @@
     display: none;
   }
 
-   /* Define the smooth RGB gradient shifting animation */
-    @keyframes gradientShift {
+   /* Define the smooth RGB color shifting animation */
+    @keyframes rgbShift {
       0% {
-        background: linear-gradient(90deg, red, violet, blue); /* Start with red to violet to blue */
-        -webkit-background-clip: text; /* Clip gradient to text */
-        color: transparent; /* Make the text transparent to show gradient */
+        color: rgb(255, 0, 0); /* Start with red (RGB) */
       }
-      50% {
-        background: linear-gradient(90deg, violet, blue, red); /* Transition smoothly */
-        -webkit-background-clip: text;
-        color: transparent;
+      33% {
+        color: rgb(0, 255, 0); /* Transition to green (RGB) */
+      }
+      66% {
+        color: rgb(0, 0, 255); /* Transition to blue (RGB) */
       }
       100% {
-        background: linear-gradient(90deg, blue, red, violet); /* Complete the cycle smoothly */
-        -webkit-background-clip: text;
-        color: transparent;
+        color: rgb(255, 0, 0); /* Back to red (RGB) */
       }
     }
 
     /* Apply the animation to the .profile__name class */
     .profile__name {
       font-size: 3rem; /* Larger text size */
-      font-weight: bold; /* Make it bold */
-      animation: gradientShift 6s ease infinite; /* 6s duration, smooth easing, infinite loop */
+      font-weight: bold; /* Bold text */
+      animation: rgbShift 4s ease infinite; /* 4s duration, smooth easing, infinite loop */
     }
 </style>
 </head>
