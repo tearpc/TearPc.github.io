@@ -21,24 +21,29 @@
   }
 
      /* Define the RGB shifting animation */
-    @keyframes fadeRGB {
+    @keyframes gradientShift {
       0% {
-        color: red; /* Start with red */
+        background: linear-gradient(90deg, red, violet, blue); /* Start with red to violet to blue */
+        -webkit-background-clip: text; /* Clip gradient to text */
+        color: transparent; /* Make the text transparent to show gradient */
       }
-      33% {
-        color: violet; /* Shift to violet */
-      }
-      66% {
-        color: blue; /* Shift to blue */
+      50% {
+        background: linear-gradient(90deg, violet, blue, red); /* Shift the gradient */
+        -webkit-background-clip: text;
+        color: transparent;
       }
       100% {
-        color: red; /* Back to red */
+        background: linear-gradient(90deg, blue, red, violet); /* Final gradient shift */
+        -webkit-background-clip: text;
+        color: transparent;
       }
     }
 
     /* Apply the animation to the .profile__name class */
     .profile__name {
-      animation: fadeRGB 1.5s infinite; /* 1.5s duration, infinite loop */
+      font-size: 3rem; /* Larger text size */
+      font-weight: bold; /* Make it bold */
+      animation: gradientShift 3s infinite; /* 3s duration, infinite loop */
     }
 </style>
 </head>
