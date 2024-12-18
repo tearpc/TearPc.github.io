@@ -13,34 +13,18 @@
 <link rel="icon" href="assets/img/favicon.jpeg" type="image/jpeg">
 <title>Tear PC</title>
 <!-- Link to Google Fonts for Atomic Age -->
-  <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
-  <style>
-    /* Define the smooth RGB color shifting animation */
-    @keyframes rgbShift {
-      0% {
-        color: rgb(255, 0, 0); /* Start with red (RGB) */
-      }
-      33% {
-        color: rgb(0, 255, 0); /* Transition to green (RGB) */
-      }
-      66% {
-        color: rgb(0, 0, 255); /* Transition to blue (RGB) */
-      }
-      100% {
-        color: rgb(255, 0, 0); /* Back to red (RGB) */
-      }
-    }
-
-    /* Apply the animation and custom font (Atomic Age) to the .profile__name class */
-    .profile__name {
-      font-family: 'Atomic Age', sans-serif; /* Using Atomic Age font */
-      font-size: 2.5rem; /* Adjusted font size */
-      font-weight: bold; /* Bold text */
-      animation: rgbShift 4s ease infinite; /* 4s duration, smooth easing, infinite loop */
-      white-space: nowrap; /* Prevent text from breaking into multiple lines */
-      overflow: hidden; /* Hide overflow if text is too long */
-      text-overflow: ellipsis; /* Add "..." at the end if the text is too long */
-    }
+<link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
+<style>
+  /* Updated .profile__name CSS */
+  .profile__name {
+    font-family: 'Atomic Age', sans-serif; /* Retain Atomic Age font */
+    font-size: 2.5rem; /* Adjusted font size */
+    font-weight: bold; /* Bold text */
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add "..." at the end if the text is too long */
+    color: white; /* Static white color */
+  }
 </style>
 </head>
 
