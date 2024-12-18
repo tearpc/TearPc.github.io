@@ -15,7 +15,7 @@
 <!-- Link to Google Fonts for Atomic Age -->
   <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
   <style>
-   /* General Reset */
+ /* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -23,20 +23,22 @@
 }
 
 /* Body Styling */
-body {
+html, body {
+  height: 100%; /* Ensure full height for the document */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  justify-content: flex-start; /* Use flex-start to avoid splitting */
+  align-items: flex-start;
+  flex-direction: column; /* Stack the content vertically */
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
-/* Button Container */
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Profile, Filters, and Contact sections */
+.profile, .filters, .contact__content {
+  flex: 1; /* Allow these sections to take full space */
+  width: 100%; /* Make sure they take full width */
+  padding: 20px; /* Add padding */
 }
 
 /* Button Styling */
