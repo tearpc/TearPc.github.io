@@ -15,7 +15,86 @@
 <!-- Link to Google Fonts for Atomic Age -->
   <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
   <style>
-    /* Your existing CSS (if any) goes here */
+    /* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* Button styles */
+.animated-button {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.animated-button::before,
+.animated-button::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    transition: all 0.4s ease;
+}
+
+.animated-button::before {
+    top: 0;
+    left: 0;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.animated-button::after {
+    bottom: 0;
+    right: 0;
+    transition: right 0.4s ease, bottom 0.4s ease;
+}
+
+/* Button Hover Effect */
+.animated-button:hover {
+    color: white;
+    border-color: red;
+}
+
+.animated-button:hover::before {
+    left: 100%;
+    top: 0;
+}
+
+.animated-button:hover::after {
+    right: 100%;
+    bottom: 0;
+}
+
+.animated-button:hover::before {
+    top: 100%;
+    left: 0;
+}
+
+.animated-button:hover::after {
+    right: 100%;
+    bottom: 0;
+}
   </style>
 </head>
 
@@ -82,7 +161,7 @@ Completed <br> Projects
 </div>
 </div>
 <div class="profile__buttons">
-<a href="https://wa.me/687919911" class="button" onclick="showMessageCV()">
+<a href="https://wa.me/687919911" class="animated-button" onclick="showMessageCV()">
 Contact On Whatsapp <i class="ri-whatsapp-line"></i>
 </a>
 <div class="profile__buttons-small">
