@@ -15,85 +15,89 @@
 <!-- Link to Google Fonts for Atomic Age -->
   <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
   <style>
-    /* Base styles */
+   /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Button styles */
-.animated-button {
-    position: relative;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: white;
-    color: black;
-    border: 2px solid transparent;
-    border-radius: 30px;
-    cursor: pointer;
-    outline: none;
-    overflow: hidden;
-    transition: color 0.4s ease, border-color 0.4s ease;
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.animated-button::before,
-.animated-button::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    background-color: red;
-    transition: all 0.4s ease;
+/* Button Styling */
+.hover-button {
+  position: relative;
+  padding: 15px 40px;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 30px;
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.animated-button::before {
-    top: 0;
-    left: 0;
-    transition: left 0.4s ease, top 0.4s ease;
+/* Animation Effect (for when the button is hovered) */
+.hover-button::before,
+.hover-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  transition: transform 0.3s ease;
 }
 
-.animated-button::after {
-    bottom: 0;
-    right: 0;
-    transition: right 0.4s ease, bottom 0.4s ease;
+.hover-button::before {
+  top: 0;
+  left: -100%;
 }
 
-/* Button Hover Effect */
-.animated-button:hover {
-    color: white;
-    border-color: red;
+.hover-button::after {
+  bottom: 0;
+  right: -100%;
 }
 
-.animated-button:hover::before {
-    left: 100%;
-    top: 0;
+/* Hover Animation */
+.hover-button:hover {
+  color: white;
+  border-color: red;
 }
 
-.animated-button:hover::after {
-    right: 100%;
-    bottom: 0;
+.hover-button:hover::before {
+  transform: translateX(100%);
 }
 
-.animated-button:hover::before {
-    top: 100%;
-    left: 0;
+.hover-button:hover::after {
+  transform: translateX(-100%);
 }
 
-.animated-button:hover::after {
-    right: 100%;
-    bottom: 0;
+/* Focus Animation */
+.hover-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* Active Animation */
+.hover-button:active {
+  transform: translateY(2px);
 }
   </style>
 </head>
@@ -161,7 +165,7 @@ Completed <br> Projects
 </div>
 </div>
 <div class="profile__buttons">
-<a href="https://wa.me/687919911" class="animated-button" onclick="showMessageCV()">
+<a href="https://wa.me/687919911" class="hover-button" onclick="showMessageCV()">
 Contact On Whatsapp <i class="ri-whatsapp-line"></i>
 </a>
 <div class="profile__buttons-small">
