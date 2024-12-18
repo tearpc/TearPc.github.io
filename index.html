@@ -24,21 +24,39 @@
 
 /* Body Styling */
 html, body {
-  height: 100%; /* Ensure full height for the document */
+  height: 100%;
   display: flex;
-  justify-content: flex-start; /* Use flex-start to avoid splitting */
+  justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column; /* Stack the content vertically */
+  flex-direction: column;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Main container to center all content */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Center align the content */
+  padding: 20px;
 }
 
 /* Profile, Filters, and Contact sections */
 .profile, .filters, .contact__content {
-  flex: 1; /* Allow these sections to take full space */
-  width: 100%; /* Make sure they take full width */
-  padding: 20px; /* Add padding */
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* Button Styling */
@@ -100,6 +118,97 @@ html, body {
 /* Active Animation */
 .hover-button:active {
   transform: translateY(2px);
+}
+
+/* Media Queries for responsiveness */
+
+/* Mobile version (less than 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  /* Stack content vertically on small screens */
+  .profile, .filters, .contact__content {
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* Ensure buttons align correctly */
+  .profile__buttons {
+    display: block;
+    text-align: center;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  /* Adjust button styling for mobile */
+  .hover-button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  /* Ensure images are responsive */
+  .profile__perfil img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Stack skills and contact sections */
+  .skills__content, .contact__content {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* Tablet version (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    padding: 0 20px;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  /* Adjust button container and alignments */
+  .profile__buttons {
+    display: block;
+    text-align: center;
+  }
+
+  .hover-button {
+    width: auto;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Desktop version */
+@media (min-width: 1024px) {
+  body {
+    padding: 20px 40px;
+  }
+
+  /* Adjust button container for desktop */
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hover-button {
+    padding: 15px 40px;
+  }
+
+  /* Ensure proper spacing and layout on desktop */
+  .profile, .filters, .contact__content {
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+  }
 }
   </style>
 </head>
