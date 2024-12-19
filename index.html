@@ -222,12 +222,14 @@ Contact
     var form = document.getElementById('contact-form'); // Ensure form has correct ID
 
     // Send email using EmailJS
-    emailjs.sendForm('service_awvqzab', 'template_l6iggqt', form)
-      .then(function(response) {
-        alert('Message sent successfully!');
-      }, function(error) {
-        alert('Failed to send message: ' + error);
-      });
+    emailjs.sendForm('service_awvqzab', 'template_jxl9gor', form)
+  .then(function(response) {
+    console.log('Message sent successfully', response);
+    alert('Message sent successfully!');
+  }, function(error) {
+    console.log('Failed to send message', error); // Logs detailed error info
+    alert('Failed to send message: ' + error);
+  });
   }
 
   // Add event listener to the form for submitting
