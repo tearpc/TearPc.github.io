@@ -14,8 +14,6 @@
   <title>Tear PC</title>
   <!-- Link to Google Fonts for Atomic Age -->
   <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
-!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -38,8 +36,6 @@
 
     window.addEventListener('click', enableAudio, { once: true });
     window.addEventListener('touchstart', enableAudio, { once: true });
-   // Initialize EmailJS
-    emailjs.init('pZSiHJtjbsFYRzhSR'); // Replace with your EmailJS User ID
 </script>
 
  <header class="profile container">
@@ -185,22 +181,23 @@ Contact
 </div>
 </div>
 <div class="contact__content grid" data-content id="contact">
-<h3 class="contact__title">Write me your project</h3>
-<form method="post" class="contact__form">
-<div class="contact__form-div">
-<label class="contact__form-tag">Names</label>
-<input type="text" placeholder="Insert your name" id="name" autocomplete="off" class="contact__form-input">
-</div>
-<div class="contact__form-div">
-<label class="contact__form-tag">Mail</label>
-<input type="text" placeholder="Insert your mail" id="email" autocomplete="off" class="contact__form-input">
-</div>
-<div class="contact__form-div contact__form-area">
-<label class="contact__form-tag">Project</label>
-<textarea id="project" placeholder="Write your project" cols="30" rows="10" class="contact__form-input"></textarea>
-</div>
-<button id="btn" class="button button--ghost">Send Message</button>
-</form>
+  <h3 class="contact__title">Write me your project</h3>
+  <!-- Remove method="post" -->
+  <form id="contact-form" class="contact__form">
+    <div class="contact__form-div">
+      <label class="contact__form-tag">Names</label>
+      <input type="text" placeholder="Insert your name" id="name" autocomplete="off" class="contact__form-input">
+    </div>
+    <div class="contact__form-div">
+      <label class="contact__form-tag">Mail</label>
+      <input type="email" placeholder="Insert your mail" id="email" autocomplete="off" class="contact__form-input">
+    </div>
+    <div class="contact__form-div contact__form-area">
+      <label class="contact__form-tag">Project</label>
+      <textarea id="project" placeholder="Write your project" cols="30" rows="10" class="contact__form-input"></textarea>
+    </div>
+    <button type="submit" id="btn" class="button button--ghost">Send Message</button>
+  </form>
 </div>
 </div>
 </section>
@@ -215,10 +212,14 @@ Contact
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="assets/js/sendemail.js"></script>
 <script>
+  // Initialize EmailJS
+  emailjs.init('pZSiHJtjbsFYRzhSR'); // Use your actual public key
+
+  // Function to send email
   function sendEmail(event) {
     event.preventDefault(); // Prevent default form submission
 
-    var form = document.getElementById('contact-form');
+    var form = document.getElementById('contact-form'); // Ensure form has correct ID
 
     // Send email using EmailJS
     emailjs.sendForm('service_awvqzab', 'template_l6iggqt', form)
@@ -228,6 +229,9 @@ Contact
         alert('Failed to send message: ' + error);
       });
   }
+
+  // Add event listener to the form for submitting
+  document.getElementById('contact-form').addEventListener('submit', sendEmail);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
