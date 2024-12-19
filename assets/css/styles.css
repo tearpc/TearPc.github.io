@@ -668,3 +668,13 @@ body.dark-theme {
   50% { color: blue; }
   100% { color: red; }
 }
+/* ==================== Gooey Button Styles ==================== */
+.gooey-button svg {
+  filter: url(#gooey-effect);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gooey-button svg:hover {
+  transform: scale(1.1);
+}
