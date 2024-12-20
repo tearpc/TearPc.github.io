@@ -212,26 +212,33 @@ Contact
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="assets/js/sendemail.js"></script>
 <script>
-  // Initialize EmailJS
-  emailjs.init('pZSiHJtjbsFYRzhSR'); // Use your actual public key
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-  // Function to send email
-  function sendEmail(event) {
-    event.preventDefault();
-    console.log('Attempting to send email...');
-    var form = document.getElementById('contact-form');
-    emailjs.sendForm('service_awvqzab', 'template_l6iggqt', form)
-        .then(function(response) {
-            console.log('Email sent!', response);
-            alert('Message sent successfully!');
-        }, function(error) {
-            console.error('Error:', error);
-            alert('Failed to send message: ' + error.text);
-        });
-}
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('project').value,
+    };
 
-  // Add event listener to the form for submitting
-  document.getElementById('contact-form').addEventListener('submit', sendEmail);
+    fetch('https://script.google.com/macros/s/AKfycbzsZ0qaiflrh2-A4FOt4D7xE7IxaaCqzkj152a2x5svYxwN6uKvuyLhl3up8XGOlo3Vtw/exec', { // Replace with your Google Apps Script Web App URL
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Message sent successfully!');
+        } else {
+          alert('Failed to send message.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
