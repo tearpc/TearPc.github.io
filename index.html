@@ -217,20 +217,18 @@ Contact
 
   // Function to send email
   function sendEmail(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    var form = document.getElementById('contact-form'); // Ensure form has correct ID
-
-    // Send email using EmailJS
-    emailjs.sendForm('service_awvqzab', 'template_jxl9gor', form)
-  .then(function(response) {
-    console.log('Message sent successfully', response);
-    alert('Message sent successfully!');
-  }, function(error) {
-    console.log('Failed to send message', error); // Logs detailed error info
-    alert('Failed to send message: ' + error);
-  });
-  }
+    event.preventDefault();
+    console.log('Attempting to send email...');
+    var form = document.getElementById('contact-form');
+    emailjs.sendForm('service_awvqzab', 'template_l6iggqt', form)
+        .then(function(response) {
+            console.log('Email sent!', response);
+            alert('Message sent successfully!');
+        }, function(error) {
+            console.error('Error:', error);
+            alert('Failed to send message: ' + error.text);
+        });
+}
 
   // Add event listener to the form for submitting
   document.getElementById('contact-form').addEventListener('submit', sendEmail);
